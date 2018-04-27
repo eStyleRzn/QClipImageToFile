@@ -6,6 +6,7 @@
 #include <QGuiApplication>
 
 #include "TemporaryImageFile.h"
+#include "ImageSendDialog.h"
 
 //======================================================================================================================
 LineEdit::LineEdit(QWidget* parent)
@@ -28,7 +29,13 @@ void LineEdit::insertFromMimeData(const QMimeData* source)
     if (img.isNull())
       return;
 
-    saveImage(img);
+    ImageSendDialog dlg(QPixmap::fromImage(img), this);
+
+    if (QDialog::Accepted == dlg.exec())
+    {
+      saveImage(img);
+    }
+
     return;
   }
 

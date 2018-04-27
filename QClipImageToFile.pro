@@ -49,10 +49,13 @@ INSTALLS += ExtraLibs \
 SOURCES += $$PWD/src/main.cpp \
         $$PWD/src/MainWindow.cpp \
     src/LineEdit.cpp \
-    src/TemporaryImageFile.cpp
+    src/TemporaryImageFile.cpp \
+    src/ImageSendDialog.cpp
 
 HEADERS  += $$PWD/src/MainWindow.h \
     src/LineEdit.h \
-    src/TemporaryImageFile.h
+    src/TemporaryImageFile.h \
+    src/ImageSendDialog.h
 
-FORMS    += $$PWD/src/MainWindow.ui
+FORMS    += $$PWD/src/MainWindow.ui \
+    src/ImageSendDialog.ui
